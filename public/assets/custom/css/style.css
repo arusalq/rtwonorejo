@@ -1,0 +1,62 @@
+#sd-header {
+  color: #abb4be;
+  font-size: 18px;
+  /* width: 240px; */
+}
+
+.button-inline {
+  display: inline;
+}
+
+.button-inline > button {
+  border: none;
+  background-color: white;
+}
+
+.thumb-info-title {
+  border-radius: 0 60px 10px 0;
+}
+
+#tumb-name {
+  padding: 9px 16px 9px 11px;
+}
+
+textarea {
+  resize: none;
+}
+
+#pr-btn {
+  float: right;
+  margin-top: 70px;
+}
+
+#pr-btn > button {
+  line-height: 20px;
+  width: 120px;
+}
+
+.d-inline {
+  display: inline;
+}
+
+/* @media only screen and (min-width: 768px) {
+  #pg-header {
+    left: 0;
+    top: 0;
+  }
+  #content-body-absen {
+    margin-left: 0;
+    padding: 0;
+  }
+  #inner-wrapper-absen {
+    padding-top: 55px;
+  }
+} */
+
+#text-right {
+  text-align: right !important;
+}
+
+#sampai {
+  padding-left: 0;
+}
