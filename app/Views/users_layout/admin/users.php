@@ -42,19 +42,19 @@
       </header>
       <div class="panel-body">
         <?php if (session()->getFlashdata('pesan')) : ?>
-        <div class="alert alert-success" role="alert">
-          <?= session()->getFlashdata('pesan'); ?>
-        </div>
+          <div class="alert alert-success" role="alert">
+            <?= session()->getFlashdata('pesan'); ?>
+          </div>
         <?php endif; ?>
         <?php if (session()->getFlashdata('pesanEdit')) : ?>
-        <div class="alert alert-success" role="alert">
-          <?= session()->getFlashdata('pesanEdit'); ?>
-        </div>
+          <div class="alert alert-success" role="alert">
+            <?= session()->getFlashdata('pesanEdit'); ?>
+          </div>
         <?php endif; ?>
         <?php if (session()->getFlashdata('import')) : ?>
-        <div class="alert alert-success" role="alert">
-          <?= session()->getFlashdata('import'); ?>
-        </div>
+          <div class="alert alert-success" role="alert">
+            <?= session()->getFlashdata('import'); ?>
+          </div>
         <?php endif; ?>
         <div class="row">
           <div class="col-sm-6">
@@ -80,30 +80,27 @@
           </thead>
           <tbody>
             <?php foreach ($users as $user) : ?>
-            <tr>
-              <td><?= $user->kk; ?></td>
-              <td><?= $user->nik; ?></td>
-              <td><?= $user->namaLengkap; ?></td>
-              <td><?= $user->alamat; ?></td>
-              <td class="actions panel-body">
+              <tr>
+                <td><?= $user->kk; ?></td>
+                <td><?= $user->nik; ?></td>
+                <td><?= $user->namaLengkap; ?></td>
+                <td><?= $user->alamat; ?></td>
+                <td class="actions panel-body">
 
-                <a class="modal-with-move-anim" data-target="#modalEdit" id="tombolEdit" href="#modalEdit"
-                  data-id="<?= $user->id; ?>" data-email="<?= $user->email; ?>" data-kk="<?= $user->kk ?>"
-                  data-nik="<?= $user->nik ?>" data-nama="<?= $user->namaLengkap ?>" data-alamat="<?= $user->alamat ?>">
-                  <i class="fa fa-pencil"></i>
-                </a>
+                  <a class="modal-with-move-anim" data-target="#modalEdit" id="tombolEdit" href="#modalEdit" data-id="<?= $user->id; ?>" data-kk="<?= $user->kk ?>" data-nik="<?= $user->nik ?>" data-nama="<?= $user->namaLengkap ?>" data-alamat="<?= $user->alamat ?>">
+                    <i class="fa fa-pencil"></i>
+                  </a>
 
-                <form action="delete-user" method="post" class="button-inline">
-                  <?= csrf_field() ?>
-                  <input type="hidden" name="_method" value="DELETE">
-                  <input type="hidden" name="id" value="<?= $user->id ?>">
-                  <input type="hidden" name="delete" value="1">
-                  <button type="submit" class="on-default remove-row" onclick="return confirm('Hapus user ini.?')"><i
-                      class="fa fa-trash-o"></i>
-                  </button>
-                </form>
-              </td>
-            </tr>
+                  <form action="delete-user" method="post" class="button-inline">
+                    <?= csrf_field() ?>
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="id" value="<?= $user->id ?>">
+                    <input type="hidden" name="delete" value="1">
+                    <button type="submit" class="on-default remove-row" onclick="return confirm('Hapus user ini.?')"><i class="fa fa-trash-o"></i>
+                    </button>
+                  </form>
+                </td>
+              </tr>
             <?php endforeach; ?>
           </tbody>
         </table>
@@ -178,30 +175,25 @@
         <div class="form-group mt-lg">
           <label class="col-sm-2 control-label">Nama Lengkap</label>
           <div class="col-sm-9">
-            <input type="text" name="namaLengkap" autocomplete="off"
-              class="form-control <?php if (session()->getFlashdata('errorNama')) : ?>is-invalid<?php endif ?>" value=""
-              required autofocus>
+            <input type="text" name="namaLengkap" autocomplete="off" class="form-control <?php if (session()->getFlashdata('errorNama')) : ?>is-invalid<?php endif ?>" value="" required autofocus>
           </div>
         </div>
         <div class="form-group">
           <label class="col-sm-2 control-label">NIK</label>
           <div class="col-sm-9">
-            <input type="text" name="nik" autocomplete="off"
-              class="form-control <?php if (session()->getFlashdata('errorNIK')) : ?>is-invalid<?php endif ?>" value="">
+            <input type="text" name="nik" autocomplete="off" class="form-control <?php if (session()->getFlashdata('errorNIK')) : ?>is-invalid<?php endif ?>" value="">
           </div>
         </div>
         <div class="form-group">
           <label class="col-sm-2 control-label">KK</label>
           <div class="col-sm-9">
-            <input name="kk" required="" autocomplete="off" type="text"
-              class="form-control <?php if (session()->getFlashdata('errorKK')) : ?>is-invalid<?php endif ?>">
+            <input name="kk" required="" autocomplete="off" type="text" class="form-control <?php if (session()->getFlashdata('errorKK')) : ?>is-invalid<?php endif ?>">
           </div>
         </div>
         <div class="form-group">
           <label class="col-sm-2 control-label">Alamat</label>
           <div class="col-sm-9">
-            <input name="alamat" required="" autocomplete="off" type="text"
-              class="form-control <?php if (session()->getFlashdata('errorAlamat')) : ?>is-invalid<?php endif ?>">
+            <input name="alamat" required="" autocomplete="off" type="text" class="form-control <?php if (session()->getFlashdata('errorAlamat')) : ?>is-invalid<?php endif ?>">
           </div>
         </div>
 
@@ -251,19 +243,19 @@
 <script src="<?= base_url(); ?>/assets/javascripts/tables/examples.datatables.editable.js"> </script>
 
 <script>
-$(document).on('click', '#tombolEdit', function() {
-  let id = $(this).data('id');
-  let nama = $(this).data('nama');
-  let nik = $(this).data('nik');
-  let kk = $(this).data('kk');
-  let alamat = $(this).data('alamat');
+  $(document).on('click', '#tombolEdit', function() {
+    let id = $(this).data('id');
+    let nama = $(this).data('nama');
+    let nik = $(this).data('nik');
+    let kk = $(this).data('kk');
+    let alamat = $(this).data('alamat');
 
-  $('.panel-body #editId').val(id);
-  $('.panel-body #editNama').val(nama);
-  $('.panel-body #editNIK').val(nik);
-  $('.panel-body #editKK').val(kk);
-  $('.panel-body #editAlamat').val(alamat);
-});
+    $('.panel-body #editId').val(id);
+    $('.panel-body #editNama').val(nama);
+    $('.panel-body #editNIK').val(nik);
+    $('.panel-body #editKK').val(kk);
+    $('.panel-body #editAlamat').val(alamat);
+  });
 </script>
 
 <?= $this->endSection(); ?>
